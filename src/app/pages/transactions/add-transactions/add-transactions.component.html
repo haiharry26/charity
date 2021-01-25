@@ -1,0 +1,340 @@
+<div class="panel-body">
+    <div class="form-container" [ngClass]="{'aLoader': (isLoading || isSubmiting), 'failed': isLoadingError}">
+        <div class="section">
+            <h6>Org and Financial Year</h6>
+            <div class="section-body">
+                <div class="form-group">
+                    <div class="form-field col-3">
+                        <select [(ngModel)]="inputElem.selOrgData" class="input-element"
+                            [ngClass]="{'hasValue': inputElem.selOrgData, 'hasFocus': inputElem.selOrgData}"
+                            (change)="orgDDChanged($event)">
+                            <option *ngFor="let c of orgData" [ngValue]="c">{{c.value}}</option>
+                        </select>
+                        <span class="form-field-label-wrapper" (click)="setFocus($event, 'clientId');">
+                            <label class="form-field-label">
+                                <span>Organisation</span>
+                            </label>
+                        </span>
+                    </div>
+
+                    <div class="form-field col-3">
+                        <select [(ngModel)]="inputElem.selFinYearData" class="input-element"
+                            [ngClass]="{'hasValue': inputElem.selFinYearData, 'hasFocus': inputElem.selFinYearData}"
+                            (change)="finYearDDChanged($event)">
+                            <option *ngFor="let c of finYearData" [ngValue]="c">{{c.value}}</option>
+                        </select>
+                        <span class="form-field-label-wrapper" (click)="setFocus($event, 'clientId');">
+                            <label class="form-field-label">
+                                <span>Financial Year</span>
+                            </label>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h6>Charity Details</h6>
+            <div class="section-body">
+                <div class="form-group">
+                    <div class="form-field col-3">
+                        <select [(ngModel)]="inputElem.selCharityData" class="input-element"
+                            [ngClass]="{'hasValue': inputElem.selCharityData, 'hasFocus': inputElem.selCharityData}"
+                            (change)="charityDDChanged($event)">
+                            <option *ngFor="let c of charityData" [ngValue]="c">{{c.charityname}}</option>
+                        </select>
+                        <span class="form-field-label-wrapper">
+                            <label class="form-field-label">
+                                <span>Charity Name</span>
+                            </label>
+                        </span>
+                    </div>
+
+                    <div class="form-field col-3">
+                        <input type="text" id="ein" readonly disabled name="ein" class="input-element" (input)="validate();"
+                            [ngClass]="{'hasValue': inputElem.ein.value, 'hasFocus': inputElem.ein.value}"
+                            [(ngModel)]="inputElem.ein.value" />
+                        <span class="form-field-label-wrapper" (click)="setFocus($event, 'ein');">
+                            <label class="form-field-label">
+                                <span>EIN *</span>
+                            </label>
+                        </span>
+                    </div>
+
+                    <div class="form-field col-3">
+                        <input type="text" id="contactname" readonly disabled name="contactname" class="input-element"
+                            (input)="validate();"
+                            [ngClass]="{'hasValue': inputElem.contactname.value, 'hasFocus': inputElem.contactname.value}"
+                            [(ngModel)]="inputElem.contactname.value" />
+                        <span class="form-field-label-wrapper" (click)="setFocus($event, 'contactname');">
+                            <label class="form-field-label">
+                                <span>Contact Name *</span>
+                            </label>
+                        </span>
+                    </div>
+
+                    <div class="form-field col-3">
+                        <input type="text" id="address1" name="address1"  readonly disabled class="input-element" (input)="validate();"
+                            [ngClass]="{'hasValue': inputElem.address1.value, 'hasFocus': inputElem.address1.value}"
+                            [(ngModel)]="inputElem.address1.value" />
+                        <span class="form-field-label-wrapper" (click)="setFocus($event, 'address1');">
+                            <label class="form-field-label">
+                                <span>Address 1 *</span>
+                            </label>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h6>Amount</h6>
+            <div class="section-body">
+                <div class="form-group">
+                    <div class="form-field col-4">
+                        <input type="number" id="suggested_amount" name="suggested_amount" class="input-element"
+                            (input)="validate();"
+                            [ngClass]="{'hasValue': inputElem.suggested_amount.value, 'hasFocus': inputElem.suggested_amount.value}"
+                            [(ngModel)]="inputElem.suggested_amount.value" />
+                        <span class="form-field-label-wrapper" (click)="setFocus($event, 'suggested_amount');">
+                            <label class="form-field-label">
+                                <span>Suggested Amount</span>
+                            </label>
+                        </span>
+                    </div>
+
+                    <div class="form-field col-4">
+                        <input type="number" id="amount" (input)="amountInputChanged($event)" name="amount"
+                            class="input-element" (input)="validate();"
+                            [ngClass]="{'hasValue': inputElem.amount.value, 'hasFocus': inputElem.amount.value}"
+                            [(ngModel)]="inputElem.amount.value" />
+                        <span class="form-field-label-wrapper" (click)="setFocus($event, 'amount');">
+                            <label class="form-field-label">
+                                <span>Amount</span>
+                            </label>
+                        </span>
+                    </div>
+
+                    <div class="form-field col-4">
+                        <input type="text" id="amount_in_words" name="amount_in_words" maxlength="400" readonly disabled class="input-element"
+                            (input)="validate();"
+                            [ngClass]="{'hasValue': inputElem.amount_in_words.value, 'hasFocus': inputElem.amount_in_words.value}"
+                            [(ngModel)]="inputElem.amount_in_words.value" />
+                        <span class="form-field-label-wrapper" (click)="setFocus($event, 'amount_in_words');">
+                            <label class="form-field-label">
+                                <span>Amount In Words</span>
+                            </label>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-field col-4">
+                        <select [(ngModel)]="inputElem.selPaymentMode" class="input-element"
+                            [ngClass]="{'hasValue': inputElem.selPaymentMode, 'hasFocus': inputElem.selPaymentMode}"
+                            (change)="paymentModeDDChanged($event)">
+                            <option *ngFor="let c of paymentModeData" [ngValue]="c">{{c.value}}</option>
+                        </select>
+                        <span class="form-field-label-wrapper" (click)="setFocus($event, 'clientId');">
+                            <label class="form-field-label">
+                                <span>Payment Mode</span>
+                            </label>
+                        </span>
+                    </div>
+
+                    <div class="form-field col-4">
+                        <input type="text" id="paidvia_cc" name="paidvia_cc" maxlength="3" class="input-element" (input)="validate();"
+                            [ngClass]="{'hasValue': inputElem.paidvia_cc.value, 'hasFocus': inputElem.paidvia_cc.value}"
+                            [(ngModel)]="inputElem.paidvia_cc.value" />
+                        <span class="form-field-label-wrapper" (click)="setFocus($event, 'paidvia_cc');">
+                            <label class="form-field-label">
+                                <span>Paid Via CC</span>
+                            </label>
+                        </span>
+                    </div>
+
+                    <div class="form-field col-4">
+                        <input type="text" id="paid_from" name="paid_from" maxlength="200" class="input-element" (input)="validate();"
+                            [ngClass]="{'hasValue': inputElem.paid_from.value, 'hasFocus': inputElem.paid_from.value}"
+                            [(ngModel)]="inputElem.paid_from.value" />
+                        <span class="form-field-label-wrapper" (click)="setFocus($event, 'paid_from');">
+                            <label class="form-field-label">
+                                <span>Paid From</span>
+                            </label>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" *ngIf="historyData && historyData.length">
+            <h6>History Data</h6>
+            <div class="section-body history-data">
+                <ul>
+                    <li class="head">Sr. No.</li>
+                    <li class="head">Transaction Date</li>
+                    <li class="head">Amount</li>
+                    <li class="head">Payment Mode</li>
+                    <li class="head">Transmitte Date</li>
+                    <li class="head">Check Date</li>
+                    <li class="head">Receipt</li>
+                </ul>
+                <ul *ngFor="let item of historyData; let i=index">
+                    <li>{{(i+1)}}</li>
+                    <li>{{item.date_of_tran ? item.date_of_tran : '---'}}</li>
+                    <li>{{item.amount ? item.amount : '---'}}</li>
+                    <li>{{item.modeofpayName ? item.modeofpayName : '---'}}</li>
+                    <li>{{item.transmite_date ? item.transmite_date : '---'}}</li>
+                    <li>{{item.check_date ? item.check_date : '---'}}</li>
+                    <li>{{item.receipt ? item.receipt : '---'}}</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h6>Other Details</h6>
+            <div class="section-body">
+                <div class="form-group">
+                    <div class="form-field col-3">
+                        <input type="text" id="irs_ok" name="irs_ok" maxlength="3" class="input-element" (input)="validate();"
+                            [ngClass]="{'hasValue': inputElem.irs_ok.value, 'hasFocus': inputElem.irs_ok.value}"
+                            [(ngModel)]="inputElem.irs_ok.value" />
+                        <span class="form-field-label-wrapper" (click)="setFocus($event, 'irs_ok');">
+                            <label class="form-field-label">
+                                <span>IRS Ok</span>
+                            </label>
+                        </span>
+                    </div>
+
+                    <div class="form-field col-3">
+                        <select [(ngModel)]="inputElem.receipt" class="input-element"
+                            [ngClass]="{'hasValue': inputElem.receipt, 'hasFocus': inputElem.receipt}">
+                            <option value="Y">Y</option>
+                            <option value="N">N</option>
+                        </select>
+                        <span class="form-field-label-wrapper" (click)="setFocus($event, 'clientId');">
+                            <label class="form-field-label">
+                                <span>Receipt</span>
+                            </label>
+                        </span>
+
+                    </div>
+
+                    <div class="form-field col-3">
+                        <input type="text" id="receipt_quicken" name="receipt_quicken" maxlength="3" class="input-element"
+                            (input)="validate();"
+                            [ngClass]="{'hasValue': inputElem.receipt_quicken.value, 'hasFocus': inputElem.receipt_quicken.value}"
+                            [(ngModel)]="inputElem.receipt_quicken.value" />
+                        <span class="form-field-label-wrapper" (click)="setFocus($event, 'receipt_quicken');">
+                            <label class="form-field-label">
+                                <span>Receipt Quicken</span>
+                            </label>
+                        </span>
+                    </div>
+
+                    <div class="form-field col-3">
+                        <input type="text" id="direction_of" name="direction_of" maxlength="3" class="input-element"
+                            (input)="validate();"
+                            [ngClass]="{'hasValue': inputElem.direction_of.value, 'hasFocus': inputElem.direction_of.value}"
+                            [(ngModel)]="inputElem.direction_of.value" />
+                        <span class="form-field-label-wrapper" (click)="setFocus($event, 'direction_of');">
+                            <label class="form-field-label">
+                                <span>Direction of</span>
+                            </label>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-field col-3">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Transaction Date</mat-label>
+                            <input matInput [(ngModel)]="inputElem.date_of_tran" [matDatepicker]="picker">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="form-field col-3">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Transmite Date</mat-label>
+                            <input matInput [(ngModel)]="inputElem.transmite_date" [matDatepicker]="picker1">
+                            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                            <mat-datepicker #picker1></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="form-field col-3">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Check Date</mat-label>
+                            <input matInput [(ngModel)]="inputElem.check_date" [matDatepicker]="picker2">
+                            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                            <mat-datepicker #picker2></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+
+                    <!-- <div class="form-field col-3">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Check Date</mat-label>
+                            <input matInput [(ngModel)]="inputElem.createdate" [matDatepicker]="picker3">
+                            <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+                            <mat-datepicker #picker3></mat-datepicker>
+                        </mat-form-field>
+                    </div> -->
+                </div>
+
+                <div class="form-group">
+                    <div class="form-field col-3">
+                        <input type="text" id="wording_direction" name="wording_direction" maxlength="200" class="input-element"
+                            (input)="validate();"
+                            [ngClass]="{'hasValue': inputElem.wording_direction.value, 'hasFocus': inputElem.wording_direction.value}"
+                            [(ngModel)]="inputElem.wording_direction.value" />
+                        <span class="form-field-label-wrapper" (click)="setFocus($event, 'wording_direction');">
+                            <label class="form-field-label">
+                                <span>Wording Direction</span>
+                            </label>
+                        </span>
+                    </div>
+
+                    <div class="form-field col-3">
+                        <input type="text" id="courties_copies" name="courties_copies" maxlength="100" class="input-element"
+                            (input)="validate();"
+                            [ngClass]="{'hasValue': inputElem.courties_copies.value, 'hasFocus': inputElem.courties_copies.value}"
+                            [(ngModel)]="inputElem.courties_copies.value" />
+                        <span class="form-field-label-wrapper" (click)="setFocus($event, 'courties_copies');">
+                            <label class="form-field-label">
+                                <span>Courties Copies</span>
+                            </label>
+                        </span>
+                    </div>
+
+                    <div class="form-field col-3">
+                        <input type="text" id="email_sent" name="email_sent" maxlength="3" class="input-element" (input)="validate();"
+                            [ngClass]="{'hasValue': inputElem.email_sent.value, 'hasFocus': inputElem.email_sent.value}"
+                            [(ngModel)]="inputElem.email_sent.value" />
+                        <span class="form-field-label-wrapper" (click)="setFocus($event, 'email_sent');">
+                            <label class="form-field-label">
+                                <span>Email Sent</span>
+                            </label>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group clearfix">
+                    <div class="form-field col-12">
+                        <textarea rows="5" title="Remark" name="remarks" id="remarks" maxlength="500" [(ngModel)]="inputElem.remarks"
+                            placeholder="Remark"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer" [ngClass]="{'disabled': !isValid}">
+        <button class="btn-mini" (click)="cancel($event);">CANCEL</button>
+        <button class="btn-large" [disabled]="!isValid" *ngIf="!isForEdit" (click)="submit($event);">ADD</button>
+        <button class="btn-large" [disabled]="!isValid" *ngIf="isForEdit" (click)="submit($event);">UPDATE</button>
+        <button class="btn-save-continue btn-mini" *ngIf="!isForEdit" (click)="saveContinue($event);">SAVE &
+            CONTINUE</button>
+    </div>
+</div>

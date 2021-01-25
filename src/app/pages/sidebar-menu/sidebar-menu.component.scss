@@ -1,0 +1,147 @@
+.side-menu{
+    // max-width: 250px;
+    width: auto;
+    height: 100%;
+    background-color: #2E394D;
+    overflow: auto;
+
+
+  .list-group-item {
+    background-color: #2E394D;
+    border : 1px solid #40495C;
+    list-style-type: none;
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #40495C !important;
+  }
+  .pointer {cursor: pointer;}
+  .p-left{
+    padding-left:30px ;
+    margin-bottom: 0px;
+  }
+
+  a{
+    text-decoration: none !important;
+  }
+
+  a:hover{
+    text-decoration: none !important;
+  }
+
+  .text {
+    font-size: 14px;
+    color: white;
+  }
+
+  .icon-image {
+    width: 20px;
+    height: 20px;
+    // background-color: #434c5d;
+  }
+
+
+  .menu-btn{
+    background: none;
+    border: none;
+  }
+
+  .menu-w-6{
+    flex: 0 0 250px;
+    width: 250px;
+  }
+
+  .menu-w-0{
+    flex: 0 0 0;
+    width: 67px;
+  }
+
+  .bm-item-active {
+    background-color: white !important;
+  }
+
+
+  .hover{
+    padding-left:30px ;
+  }
+
+
+  .hover:hover{
+    // background-color: #de4956;
+    background-color: #00aed4;
+    color: #ffffff;
+
+  }
+
+  .hover:hover .text{
+    color: #ffffff;
+  }
+
+  .hover:hover .icon-image{
+    // background-color: #de4956;
+    background-color: #00aed4;
+  }
+
+
+  .active {
+    // background-color: #de4956;
+    background-color: #00aed4;
+    color: #ffffff;
+    border: none;
+  }
+  .active .icon-image{
+    // background-color: #de4956;
+    background-color: #00aed4;
+  }
+
+  .active .text{
+    color: #ffffff;
+  }
+
+}
+
+.side-menu {
+  .installation-activities {
+    a {
+      padding: 10px 10px 10px 20px;
+    }
+  }
+}
+
+
+.list-group-item  {
+  ul {
+    list-style: none;
+    padding-left: 20px;
+    li {
+      background-color: #2E394D;
+      border: 1px solid #40495C;
+      list-style-type: none;
+      text-align: left;
+      padding: 0px 10px;
+      border-bottom: 1px solid #40495C !important;
+      a {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        word-break: break-word;
+        font-size: 14px;
+        color: white;
+        padding: 10px;
+
+        .fas {
+          float: right;
+        }
+      }
+    }
+  }
+  > ul {
+    padding-left: 0px;
+  }
+
+  .sub-menu {
+    display: none;
+    &.open {
+      display: block;
+    }
+  }
+}

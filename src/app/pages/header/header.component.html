@@ -1,0 +1,110 @@
+<header class="d-flex align-items-center bg-white">
+    <nav class="navbar navbar-expand-lg navbar-light w-100">
+
+        <div class="logo-main">
+            <span>
+                <span class="Logo">Charity Project</span>
+            </span>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+
+            </ul>
+            <ul class="navbar-nav my-2 my-lg-0">
+                <li class="nav-item mx-2">
+                    <div class="dropdown">
+                        <button class="btn btn-outline-secondary dropdown-toggle arrow-m-l" type="button"
+                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            All
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <div class="input-group ">
+                        <div class="input-group-prepend">
+                            <button class="btn btn-outline-secondary rounded-0" type="button">
+                                <i class="fas fa-sliders-h"></i>
+                            </button>
+                        </div>
+                        <input type="text" class="form-control search border-right-0"
+                            placeholder="enter the search item" aria-label="" aria-describedby="basic-addon1" />
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary rounded-0 border-left-0" type="button"
+                                id="button-addon2">
+                                <i class="fa fa-search" aria-hidden="true"></i> </button>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <div class="dropdown notifymenu ml-4">
+                        <button class="btn dropdown-toggle brdr-0 notify pl-0" type="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class="far fa-bell" aria-hidden="true"></i>
+                            <a href="#" class="badge bg-btn1 text-white bell-badge">10</a>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right notification-container"
+                            aria-labelledby="dropdownMenuButton">
+                <li class="dropdown-item p-0">
+                    <a class="notification-item d-flex">
+                        <span class="notification-icon ">
+                            <i class="fa fa-circle text2-color"></i>
+                        </span>
+                        <div>
+                            <p class="notification-msg1">Received-</p>
+                            <p class="notification-msg2">report #123456</p>
+                        </div>
+                        <span class="notification-cross-icon ml-auto">
+                            <i class="fas fa-times text-secondary"></i>
+                        </span>
+                    </a>
+                </li>
+                <li class="dropdown-item p-0">
+                    <a class="notification-item d-flex border-0">
+                        <span class="notification-icon ">
+                            <i class="fa fa-circle text2-color"></i>
+                        </span>
+                        <div>
+                            <p class="notification-msg1">Notification 2</p>
+                        </div>
+                        <span class="notification-cross-icon ml-auto">
+                            <i class="fas fa-times text-secondary"></i>
+                        </span>
+                    </a>
+                </li>
+
+        </div>
+        </div>
+        </li>
+        <!-- <li class="nav-item">
+      <button class="btn brdr-0 notify pl-0" type="button" aria-haspopup="true" aria-expanded="false">
+        <i class="fa fa-cog" aria-hidden="true"></i>
+      </button>
+    </li> -->
+        <li class="nav-item">
+            <div class="btn-group">
+                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    <img src="../assets/user-pic.png" width="26" height="26" alt="" />
+                </button>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <button class="dropdown-item" type="button"><i class="fas fa-cog mx-2"></i> Settings</button>
+                    <button class="dropdown-item" type="button"><i class="fas fa-user mx-2"></i> Profile</button>
+                    <button class="dropdown-item" type="button" (click)="logout()"><i class="fas fa-power-off mx-2"></i>
+                        Logout</button>
+                </div>
+            </div>
+        </li>
+        </ul>
+        </div>
+    </nav>
+</header>

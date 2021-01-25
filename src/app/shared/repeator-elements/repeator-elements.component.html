@@ -1,0 +1,31 @@
+<div class="table-grid" #element>
+    <div class="ghead">
+      <ul class="repeat-row form-group">
+        <li class="controls" style="visibility: hidden;">
+          <button type="button" (click)="removeRow($event)" class="btn btn-danger btn-remove" title="Remove current row"><i class="fa fa-minus"></i></button>
+        </li>
+        <li class="form-field" *ngFor="let item of listItem.columnHeader">
+            {{item.label}}
+        </li>
+      </ul>
+    </div>
+    <div class="gbody">
+      <div class="list-item-container">
+        <ul class="repeat-row form-group" *ngFor="let itemRow of listItem.rowData;let i = index" [attr.data-index]="i">
+            <li class="controls" [style.visibility]="i > 0 ? 'visible' : 'hidden'">
+              <button type="button" (click)="removeRow($event, i)" class="btn btn-danger btn-remove" title="Remove current row">
+                <i class="fa fa-minus"></i>
+              </button>
+            </li>
+            <li class="repeat-item form-field" *ngFor="let itemCell of itemRow.cellData">
+              <input type="text" class="input-element" [(ngModel)]="itemCell.value" />
+            </li>
+        </ul>
+      </div>
+    </div>
+    <div class="action-btn">
+      <button type="button" (click)="addNewRow($event)" class="btn btn-primary btn-addNew" title="Add new row">
+        <i class="fa fa-plus"></i><span>Add new row</span>
+      </button>
+    </div>
+  </div>

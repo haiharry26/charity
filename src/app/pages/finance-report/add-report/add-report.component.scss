@@ -1,0 +1,48 @@
+
+.section-body {
+    padding: 0px 15px;
+
+    .col-form-label {
+        font-size: 0.875rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-weight: bold;
+    }
+
+    .form-group {
+        > div {
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
+    }
+
+    ul {
+        list-style: none;
+        padding: 0px;
+        margin: 0px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        li {
+            float: left;
+            width: 33.33%;
+            margin-bottom: 0px;
+        }
+    }
+}
+
+.panel-body {
+    height: 89%;
+    padding-left: 0px;
+    .form-container {
+        border-bottom: 0px solid transparent;
+    }
+}
+
+.footer-btn {
+    .btn {
+        margin-left: 5px;
+        font-size: 1rem;
+    }
+}

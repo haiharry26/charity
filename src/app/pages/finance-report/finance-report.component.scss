@@ -1,0 +1,73 @@
+:host{
+    display: block;
+    height: 100%;
+    position: relative;
+  }
+  
+  .left-content {
+    height: 100%;
+  }
+
+.main-header {
+    height: auto;
+    h1 {
+        float: none;
+    }
+
+    .head-row {
+        list-style: none;
+        padding: 0px;
+        margin: 0px;
+        display: flex;
+        justify-content: space-between;
+        li {
+            .label {
+                font-size: 0.875rem;
+            }
+
+            .value {
+                font-size: 1.25rem;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .first-row {
+        > div {
+            display: inline-block;
+            .label {
+                font-size: 0.875rem;
+                font-weight: normal;
+            }
+
+            .value {
+                font-size: 1rem;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .summary-data {
+        margin-top: 10px;
+    }
+
+    .year-data {
+        padding: 0px 0px 0px 250px;
+        li {
+            > div {
+                float: left;
+                margin-right: 15px;
+            }
+        }
+    }
+}
+
+.main-section {
+    border-top: 100px solid transparent;
+}
+
+.list-wrap .view-holder {
+    border-bottom: none;
+}
+
+  

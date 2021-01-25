@@ -1,0 +1,26 @@
+.section-body {
+    &.history-data {
+        ul {
+            list-style: none;
+            padding: 0px;
+            margin: 0px;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 0px 10px;
+            &:first-child {
+                margin-bottom: 10px;
+                li {
+                    font-weight: bold;
+                    width: 200px;
+                }
+            }
+    
+            li {
+                float: left;
+                text-align: left;
+                width: 200px;
+            }
+        }
+    }
+}

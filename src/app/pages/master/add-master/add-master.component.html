@@ -1,0 +1,189 @@
+<div class="panel-body">
+    <div class="form-container" [ngClass]="{'aLoader': (isLoading || isSubmiting), 'failed': isLoadingError}">
+        <div class="section">
+            <h6>Basic Details</h6>
+            <div class="section-body">
+                <div class="form-group">
+                    <div class="form-field col-3">
+                        <input type="text" id="charityname" name="charityname" class="input-element"
+                            (input)="validate();"
+                            [ngClass]="{'hasValue': inputElem.charityname.value, 'hasFocus': inputElem.charityname.value}"
+                            [(ngModel)]="inputElem.charityname.value" />
+                        <span class="form-field-label-wrapper" (click)="setFocus($event, 'charityname');">
+                            <label class="form-field-label">
+                                <span>Charity Name *</span>
+                            </label>
+                        </span>
+                    </div>
+
+                    <div class="form-field col-3">
+                        <input type="text" id="ein" name="ein" class="input-element"
+                            (input)="validate();"
+                            [ngClass]="{'hasValue': inputElem.ein.value, 'hasFocus': inputElem.ein.value}"
+                            [(ngModel)]="inputElem.ein.value" />
+                        <span class="form-field-label-wrapper" (click)="setFocus($event, 'ein');">
+                            <label class="form-field-label">
+                                <span>EIN *</span>
+                            </label>
+                        </span>
+                    </div>
+
+                    <div class="form-field col-3">
+                        <input type="text" id="contactname" name="contactname" class="input-element"
+                            (input)="validate();"
+                            [ngClass]="{'hasValue': inputElem.contactname.value, 'hasFocus': inputElem.contactname.value}"
+                            [(ngModel)]="inputElem.contactname.value" />
+                        <span class="form-field-label-wrapper" (click)="setFocus($event, 'contactname');">
+                            <label class="form-field-label">
+                                <span>Contact Name *</span>
+                            </label>
+                        </span>
+                    </div>
+
+                    <div class="form-field col-3">
+                        <input type="text" id="dearwhom" name="dearwhom" class="input-element"
+                            (input)="validate();"
+                            [ngClass]="{'hasValue': inputElem.dearwhom.value, 'hasFocus': inputElem.dearwhom.value}"
+                            [(ngModel)]="inputElem.dearwhom.value" />
+                        <span class="form-field-label-wrapper" (click)="setFocus($event, 'dearwhom');">
+                            <label class="form-field-label">
+                                <span>Dear whom *</span>
+                            </label>
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <div class="form-field col-3">
+                        <input type="text" id="address1" name="address1" class="input-element"
+                            (input)="validate();"
+                            [ngClass]="{'hasValue': inputElem.address1.value, 'hasFocus': inputElem.address1.value}"
+                            [(ngModel)]="inputElem.address1.value" />
+                        <span class="form-field-label-wrapper" (click)="setFocus($event, 'address1');">
+                            <label class="form-field-label">
+                                <span>Address 1</span>
+                            </label>
+                        </span>
+                    </div>
+
+                    <div class="form-field col-3">
+                        <input type="text" id="address2" name="address2" class="input-element"
+                            (input)="validate();"
+                            [ngClass]="{'hasValue': inputElem.address2.value, 'hasFocus': inputElem.address2.value}"
+                            [(ngModel)]="inputElem.address2.value" />
+                        <span class="form-field-label-wrapper" (click)="setFocus($event, 'address2');">
+                            <label class="form-field-label">
+                                <span>Address 2</span>
+                            </label>
+                        </span>
+                    </div>
+
+                    <div class="form-field col-3">
+                        <input type="text" id="city" name="city" class="input-element"
+                            (input)="validate();"
+                            [ngClass]="{'hasValue': inputElem.city.value, 'hasFocus': inputElem.city.value}"
+                            [(ngModel)]="inputElem.city.value" />
+                        <span class="form-field-label-wrapper" (click)="setFocus($event, 'city');">
+                            <label class="form-field-label">
+                                <span>City</span>
+                            </label>
+                        </span>
+                    </div>
+
+                    <div class="form-field col-3">
+                        <input type="text" id="postalcode" name="postalcode" class="input-element"
+                            (input)="validate();"
+                            [ngClass]="{'hasValue': inputElem.postalcode.value, 'hasFocus': inputElem.postalcode.value}"
+                            [(ngModel)]="inputElem.postalcode.value" />
+                        <span class="form-field-label-wrapper" (click)="setFocus($event, 'postalcode');">
+                            <label class="form-field-label">
+                                <span>postalcode</span>
+                            </label>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-field col-3">
+                        <input type="text" id="emailid1" name="emailid1" class="input-element"
+                            (input)="validate();"
+                            [ngClass]="{'hasValue': inputElem.emailid1.value, 'hasFocus': inputElem.emailid1.value}"
+                            [(ngModel)]="inputElem.emailid1.value" />
+                        <span class="form-field-label-wrapper" (click)="setFocus($event, 'emailid1');">
+                            <label class="form-field-label">
+                                <span>Email Id 1</span>
+                            </label>
+                        </span>
+                    </div>
+
+                    <div class="form-field col-3">
+                        <input type="text" id="emailid2" name="emailid2" class="input-element"
+                            (input)="validate();"
+                            [ngClass]="{'hasValue': inputElem.emailid2.value, 'hasFocus': inputElem.emailid2.value}"
+                            [(ngModel)]="inputElem.emailid2.value" />
+                        <span class="form-field-label-wrapper" (click)="setFocus($event, 'emailid2');">
+                            <label class="form-field-label">
+                                <span>Email Id 2</span>
+                            </label>
+                        </span>
+                    </div>
+
+                    <div class="form-field col-3">
+                        <input type="text" id="phone1" name="phone1" class="input-element"
+                            (input)="validate();"
+                            [ngClass]="{'hasValue': inputElem.phone1.value, 'hasFocus': inputElem.phone1.value}"
+                            [(ngModel)]="inputElem.phone1.value" />
+                        <span class="form-field-label-wrapper" (click)="setFocus($event, 'phone1');">
+                            <label class="form-field-label">
+                                <span>Phone no 1</span>
+                            </label>
+                        </span>
+                    </div>
+
+                    <div class="form-field col-3">
+                        <input type="text" id="phone2" name="phone2" class="input-element"
+                            (input)="validate();"
+                            [ngClass]="{'hasValue': inputElem.phone2.value, 'hasFocus': inputElem.phone2.value}"
+                            [(ngModel)]="inputElem.phone2.value" />
+                        <span class="form-field-label-wrapper" (click)="setFocus($event, 'phone2');">
+                            <label class="form-field-label">
+                                <span>Phone no 2</span>
+                            </label>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-field col-12">
+                        <input type="text" id="url" name="url" class="input-element"
+                            (input)="validate();"
+                            [ngClass]="{'hasValue': inputElem.url.value, 'hasFocus': inputElem.url.value}"
+                            [(ngModel)]="inputElem.url.value" />
+                        <span class="form-field-label-wrapper" (click)="setFocus($event, 'url');">
+                            <label class="form-field-label">
+                                <span>URL</span>
+                            </label>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group clearfix">
+                    <div class="form-field col-12">
+                        <textarea rows="5" title="Remark" name="remarks" id="remarks" [(ngModel)]="inputElem.remarks" placeholder="Remark"></textarea>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="footer" [ngClass]="{'disabled': !isValid}">
+        <button class="btn-mini" (click)="cancel($event);">CANCEL</button>
+        <button class="btn-large" [disabled]="!isValid" *ngIf="!isForEdit" (click)="submit($event);">ADD</button>
+        <button class="btn-large" [disabled]="!isValid" *ngIf="isForEdit" (click)="submit($event);">UPDATE</button>
+        <button class="btn-save-continue btn-mini" *ngIf="!isForEdit" (click)="saveContinue($event);">SAVE &
+      CONTINUE</button>
+    </div>
+
+</div>

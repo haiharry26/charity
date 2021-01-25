@@ -1,0 +1,23 @@
+<div class="panel-body">
+    <div class="form-container" [ngClass]="{'aLoader': (isLoading || isSubmiting)}">
+        <div class="section">
+            <h6>Financial Year Ledger</h6>
+            <div class="section-body">
+                <ul>
+                    <li class="form-group" *ngFor="let item of finYearLedgerData">
+                        <label for="{{'seqno' + item.seqno}}" [title]="item.description" class="col-12 col-form-label">{{item.description}}</label>
+                        <div class="col-12">
+                            <input type="number" id="{{'seqno' + item.seqno}}" [readonly]="item.isReadonly" [disabled]="item.isDisable" [(ngModel)]="item.amount" class="form-control"
+                               (focus)="onFocus($event, item.seqno, item);"  (input)="formatInputValue($event, item.seqno, item);" (change)="onChange($event, item.seqno, item);" />
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="shadow-lg p-3 bg-white rounded disabled footer-btn" [ngClass]="{'disabled': !isValid}">
+        <button class="btn btn-large btn-primary" *ngIf="!isForEdit" (click)="submit($event);">SUBMIT</button>
+        <button class="btn btn-large btn-primary" *ngIf="isForEdit" (click)="submit($event);">UPDATE</button>
+        <button class="btn btn-default" (click)="cancel($event);">CANCEL</button>
+    </div>
+</div>

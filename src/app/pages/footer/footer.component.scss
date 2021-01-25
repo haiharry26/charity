@@ -1,0 +1,13 @@
+$bg2-color: #061019;
+$text2-color: #7c7f81;
+.bg-color2{background: $bg2-color;}
+
+
+.footer-wrapper{
+    display: flex;
+    height: 8vh;
+    font-size: 11px;
+    p {
+        color: $text2-color;
+    }
+}

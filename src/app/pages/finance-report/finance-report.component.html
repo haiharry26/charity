@@ -1,0 +1,59 @@
+<div class="main-header fin-report" [ngClass]="{'aLoader': isLoading}">
+    <!-- <h1>Finance Report</h1> -->
+
+    <div class="listingContainer">
+        <div class="listing-header clearfix">
+            <div class="filter-row settings">
+                <app-filter-wrapper class="filter-container fit-to-parent" [defaultFilterList]="defaultFilterList"
+                    (onSelectionChange)="onFilterChange($event)" (onFilterChange)="onFilterChange($event)">
+                </app-filter-wrapper>
+            </div>
+        </div>
+
+        <ul class="head-row row year-data">
+            <li>
+                <div class="last-year">
+                    <div class="label" title="Last Year's Target">Last Year: <strong>{{summaryData.lastYearTarget ? summaryData.lastYearTarget : 0}}</strong></div>
+                </div>
+                <div class="current-year">
+                    <div class="label" title="Current Year Target">Current Year Target: <strong>{{summaryData.target_amount ? summaryData.target_amount : 0}}</strong></div>
+                    <!-- <div class="value">{{summaryData.currentYearTarget}}</div> -->
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="summary-data">
+        <ul class="head-row row">
+            <li class="col-12" style="padding-left: 5px;">
+                <div class="first-row">
+                    <div class="paid">
+                        <div class="label" title="Committed YTD">Committed: <strong>{{summaryData.total_amount ? summaryData.total_amount : 0}}</strong></div>
+                        <!-- <div class="value">{{summaryData.committedYTD}}</div> -->
+                    </div>
+                    <div class="remaining pull-right">
+                        <div class="label" title="Shortage to Make Up">Shortage: <strong>{{summaryData.shortage}}</strong></div>
+                        <!-- <div class="value">{{summaryData.shortage}}</div> -->
+                    </div>
+                </div>
+                <div class="second-row">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" [style.width]="summaryData.percentage" aria-valuenow="100"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="main-section" #mainSection>
+    <div class="right-content" id="right-content"></div>
+    <div class="left-content">
+        <div class="list-wrap">
+            <div class="view-holder">
+                <app-add-report></app-add-report>
+            </div>
+        </div>
+    </div>
+</div>

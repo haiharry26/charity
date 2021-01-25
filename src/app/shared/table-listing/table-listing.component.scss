@@ -1,0 +1,81 @@
+:host {
+    display: block;
+    height: 100%;
+  }
+  
+  .listingContainer {
+    height: 100%;
+  
+    .listing-header {
+      background-color: #f1f1f1;
+      position: absolute;
+      display: block;
+      width: 100%;
+      z-index: 2;
+      box-shadow: 0 0 3px 0 #bbb;
+  
+      .settings {
+        padding: 6px 10px 6px 0;
+  
+        > * {
+          margin-left: 5px;
+          display: inline-block;
+          vertical-align: top;
+        }
+      }
+    }
+  
+    .table-grid {
+      border-bottom: 1px solid #ddd;
+      position: relative;
+      height: 100%;
+      border-top: 39px solid #ddd;
+      .ghead {
+        position: absolute;
+        width: 100%;
+        background: #fff;
+        overflow: hidden;
+        ul {
+          position: relative;
+          li {
+            position: relative;
+            white-space: nowrap;
+            overflow: hidden;
+  
+            b {
+              font-weight: bold;
+            }
+          }
+        }
+      }
+  
+      .gbody {
+        height: 100%;
+        width: 100%;
+        overflow: auto;
+        border-top: 36px solid #fff;
+  
+        .pagerDom {
+          text-align: left;
+          padding: 8px 5px 8px 10px;
+          line-height: 1;
+  
+          .record-counter {
+            line-height: 26px;
+            margin-left: 10px;
+          }
+  
+          .pagination {
+            margin: 0;
+            > li {
+              > a {
+                padding: 4px 10px;
+              }
+            }
+          }
+        }
+      }
+  
+    }
+  }
+  

@@ -1,0 +1,79 @@
+header {
+    // height: 16vh;
+    /*********************/
+    .bell-badge {
+        position: absolute !important;
+        font-size: 8px;
+        top: 15px !important;
+        right: 35px !important;
+    }
+    .notification-container li {
+        max-height: 220px;
+        overflow-y: auto;
+        width: 250px;
+        font-size: 12px;
+    }
+    .notification-item {
+        display: flex;
+        padding: 8px 15px;
+        color: inherit;
+        color: #707070 !important;
+        border-bottom: 1px solid #ddd;
+        transition: background-color 0.3s ease;
+    }
+    .notification-icon {
+        padding-right: 10px;
+    }
+    .notification-cross-icon {
+        font-size: 16px;
+        float: right;
+    }
+    .notification-msg1 {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.2;
+    }
+    .notification-msg1,
+    .notification-msg2 {
+        margin-bottom: 0;
+    }
+    btn.focus,
+    .btn:focus {
+        box-shadow: none !important;
+    }
+    /********************/
+    input {
+        font-size: 12px;
+        height: 38px;
+        border-color: rgb(108, 117, 125);
+        width: 230px;
+    }
+    .form-control:focus {
+        border-color: unset !important;
+        box-shadow: unset !important;
+    }
+    .arrow-m-l:after {
+        margin-left: 2em;
+    }
+}
+
+.logo-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5px;
+    // height: 75px;
+    background-color: black;
+    img {
+        width: 150px;
+    }
+    .Logo {
+        font-weight: bold;
+        font-size: 1.5rem;
+        color: #fff;
+    }
+}
+
+.dropdown-menu {
+    z-index: 9999 !important;
+}
