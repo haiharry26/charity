@@ -413,9 +413,7 @@ export class AddTransactionsComponent implements OnInit, OnDestroy {
     if (this.isSubmiting) {
       return;
     }
-
     this.isSubmiting = true;
-
     this.httpClient.post(ApiConstant.saveCharityTransactionsDataURL, this.paramObj).subscribe((data) => {
       this.isSubmiting = false;
       if (this.isForEdit) {

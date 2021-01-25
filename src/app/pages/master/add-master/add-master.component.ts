@@ -118,7 +118,8 @@ export class AddMasterComponent implements OnInit, OnDestroy {
     private broadcast: BroadcastService,
     private util: CommonUtilService,
     private httpClient: HttpClient
-  ) { }
+  ) {
+  }
 
   listen() {
     this.editSub = this.broadcast.on<string>(AppConstant.CHARITY_MASTER.LOAD_DATA_FOR_EDIT).subscribe((data: any) => {
@@ -143,6 +144,8 @@ export class AddMasterComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     moment.locale('engb');
     this.init();
+    this.listen();
+
   }
 
   ngOnDestroy() {
@@ -207,6 +210,13 @@ export class AddMasterComponent implements OnInit, OnDestroy {
         this.inputElem[key].value = '';
       }
     }
+    this.resetDDData();
+  }
+  resetDDData() {
+    this.inputElem.selCharityData = null;
+    this.inputElem.selOrgData = null;
+    this.inputElem.selFinYearData = null;
+    this.inputElem.selPaymentMode = null;
   }
 
   cancel(evt?: any) {
@@ -248,7 +258,6 @@ export class AddMasterComponent implements OnInit, OnDestroy {
     if (this.isSubmiting) {
       return;
     }
-
     this.isSubmiting = true;
 
     this.httpClient.post(ApiConstant.saveCharityMasterDataURL, this.paramObj).subscribe((data) => {
@@ -262,7 +271,8 @@ export class AddMasterComponent implements OnInit, OnDestroy {
         title: 'Success',
         msg: 'Charity Master Details Saved Successfully.'
       });
-      if (opt && opt.isReqToKeepOpen) {
+
+       if (opt && opt.isReqToKeepOpen) {
         this.reset();
       } else {
         this.cancel();
@@ -274,12 +284,10 @@ export class AddMasterComponent implements OnInit, OnDestroy {
         msg: 'Error while saving charity master details!'
       });
     });
-  }
+}
 
   updateListingRow(data) {
-    if (data && data.data) {
-      this.onUpdateSuccess.emit(data.data);
-    }
+      this.onUpdateSuccess.emit(data);
   }
 
   addNewDataInListing(data) {
