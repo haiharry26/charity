@@ -145,7 +145,6 @@ export class AddMasterComponent implements OnInit, OnDestroy {
     moment.locale('engb');
     this.init();
     this.listen();
-
   }
 
   ngOnDestroy() {
@@ -178,6 +177,8 @@ export class AddMasterComponent implements OnInit, OnDestroy {
       });
     });
   }
+
+
 
   setData(data) {
     if (data && data.data) {
@@ -274,6 +275,7 @@ export class AddMasterComponent implements OnInit, OnDestroy {
 
        if (opt && opt.isReqToKeepOpen) {
         this.reset();
+       // window.location.reload();
       } else {
         this.cancel();
       }
@@ -293,6 +295,7 @@ export class AddMasterComponent implements OnInit, OnDestroy {
   addNewDataInListing(data) {
     if (data && data.data) {
       this.onAddSuccess.emit({});
+
     }
   }
 
@@ -301,6 +304,7 @@ export class AddMasterComponent implements OnInit, OnDestroy {
     if (this.isValid) {
       this.setParam();
       this.submitData();
+      window.location.reload();
     }
   }
 

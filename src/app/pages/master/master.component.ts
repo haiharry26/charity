@@ -253,6 +253,7 @@ export class MasterComponent implements OnInit {
 
   loadListing(data) {
     this.updateListParam(data);
+    this.loadData();
   }
 
   delete(evt) {
@@ -296,6 +297,7 @@ export class MasterComponent implements OnInit {
 
   updateListingData(rows) {
     this.tableListingComponent.updateSelectedRow(rows);
+    this.loadData();
   }
 
   //start Code for Export to Excel
