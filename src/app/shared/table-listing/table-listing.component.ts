@@ -5,8 +5,12 @@ import { ApiConstant } from '../api-constant.enum';
 import { AppConstant } from '../app-constant.enum';
 import { ViewType, PartialRefreshParams } from '../listing.enum';
 import { INPUT_DATA_TYPE } from '../actions.enum';
-
+import { finYear } from '../../pages/data/finYear';
 import { get, debounce } from 'lodash';
+import { BroadcastService } from '../../shared/broadcast.service';
+import { FinanceReportService } from '../../pages/finance-report/services/finance-report.service';
+import { TransactionService } from '../../pages/transactions/transaction.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-table-listing',
@@ -14,6 +18,34 @@ import { get, debounce } from 'lodash';
   styleUrls: ['./table-listing.component.scss']
 })
 export class TableListingComponent implements OnInit, OnDestroy {
+
+  public isLoading: boolean = false;
+  public summaryData: any = {};
+  public finYearLedgerData: any = null;
+
+  public defaultFilterList1: any = [
+    {
+      id: 'CMF01',
+      fieldName: "finyearid",
+      indexField: "finyearid",
+      labelName: "Financial Year",
+      dataType: "Dropdown",
+      popupTo: {
+        recordBatchSize: 25,
+        data: finYear.data
+      },
+      listingColumnFieldName: "finyearid",
+      data: finYear.data,
+      isDataLoaded: true,
+      isDynamic: false,
+      isOpen: false,
+      isReqRemove: false
+    }
+  ];
+
+  private filterParam: any = {
+    finyearid: []
+  };
 
   // Inputs
   @Input('appType') appType: any = 0;
@@ -112,7 +144,6 @@ export class TableListingComponent implements OnInit, OnDestroy {
    * @memberof TableListingComponent
    */
   @Output() onMinMaxWinChange: EventEmitter<any> = new EventEmitter<any>();
-
 
   /**
    * @description Selected data array
@@ -635,7 +666,11 @@ export class TableListingComponent implements OnInit, OnDestroy {
 
   constructor(
     private util: CommonUtilService,
-    public listingApi: ListingApiService
+    public listingApi: ListingApiService,
+    private broadcast: BroadcastService,
+    private financeService: FinanceReportService,
+    private tranService: TransactionService,
+    private httpClient: HttpClient,
   ) { }
 
 
@@ -649,6 +684,7 @@ export class TableListingComponent implements OnInit, OnDestroy {
     this.uniqueId;
     this.timestamp = (new Date()).getTime();
     this.init();
+    this.init1();
   }
 
   ngOnDestroy() {
@@ -2655,5 +2691,62 @@ export class TableListingComponent implements OnInit, OnDestroy {
       listingTypeChanged: true
     });
   }
+
+
+
+
+
+
+  init1() {
+    this.setSummaryData();
+  }
+
+  onFilterChange1(evt) {
+    // console.log(evt);
+    this.setSummaryData();
+    this.broadcast.broadcast('FINANCE_LEDGER_EDIT', {
+
+    })
+  }
+
+  setSummaryData() {
+    this.tranService.initOrgFinYearDDValue();
+    this.filterParam.finyearid = [this.tranService.selOrgFinYear.finyearid];
+    this.loadSummaryData();
+  }
+
+  loadSummaryData() {
+    if (this.isLoading) {
+      return;
+    }
+    this.isLoading = true;
+    this.httpClient.get(ApiConstant.getSummaryYear + '/' + this.filterParam.finyearid).subscribe((data: any) => {
+      this.isLoading = false;
+      this.manipulateSummaryData(data.data);
+    }, (err) => {
+      this.isLoading = false;
+      this.util.notification.error({
+        title: 'Error',
+        msg: 'Error while loading summary details year wise!'
+      })
+    });
+  }
+
+  manipulateSummaryData(data) {
+    data.shortage = data.target_amount - data.total_amount;
+    data.percentage = Math.min((data.total_amount / data.target_amount) * 100, 100) + '%';
+    this.summaryData = data;
+    this.financeService.setSummaryData(data);
+    this.broadcast.broadcast('SET_SUMMARY_DATA', data);
+  }
+
+
+
+
+
+
+
+
+
 
 }

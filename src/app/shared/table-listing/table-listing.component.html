@@ -1,13 +1,13 @@
 <div class="listingContainer" #element>
     <div class="listing-header clearfix">
       <div class="filter-row settings">
-        <app-filter-wrapper class="filter-container fit-to-parent" 
-          [defaultFilterList]="defaultFilterList" [listingType]="1" 
+        <app-filter-wrapper class="filter-container fit-to-parent"
+          [defaultFilterList]="defaultFilterList" [listingType]="1"
           (onSelectionChange)="onFilterChange($event)" (onFilterChange)="onFilterChange($event)">
         </app-filter-wrapper>
       </div>
     </div>
-    
+
     <div class="table-grid" [ngClass]="{'no-records': !listingData.allItem.length}" *ngIf="activeViewType === ViewType.LIST">
       <div class="ghead" [style.display]="!listingData.allItem.length ? 'none' : 'block'">
         <ul>
@@ -35,15 +35,16 @@
               <i *ngIf="itemH.order && enableSorting" class="fa"
                 [ngClass]="{'fa-chevron-up': (itemH.order == 'asc'), 'fa-chevron-down': (itemH.order == 'desc')}"></i>
               <i *ngIf="enableSorting && itemH.fieldName == 'actions#actionTime'" class="fa fa-info-circle" title="sorting-continue-msg-popover"></i>
-  
+
               <!-- <ng-container *ngIf="enableColumnFilter">
                 <ng-container *ngTemplateOutlet="quickFilter; context: {itemH: itemH}"></ng-container>
               </ng-container>
-  
+
               <div *ngIf="['checkbox', 'img'].indexOf(itemH.colType) == -1" class="resize-handle"
                 (mousedown)="resizeColumn($event, itemH, $index)"></div> -->
             </li>
           </ng-container>
+
         </ul>
       </div>
       <div class="gbody">
@@ -55,6 +56,61 @@
         </p>
       </div>
     </div>
+
+
+
+
+
+    <div class="main-header fin-report" [ngClass]="{'aLoader': isLoading}">
+      <!-- <h1>Finance Report</h1> -->
+      <div class="listingContainer">
+          <div class="listing-header clearfix">
+              <div class="filter-row settings">
+                  <app-filter-wrapper class="filter-container fit-to-parent" [defaultFilterList]="defaultFilterList1"
+                      (onSelectionChange)="onFilterChange1($event)" (onFilterChange1)="onFilterChange1($event)">
+                  </app-filter-wrapper>
+              </div>
+          </div>
+
+          <ul class="head-row row year-data">
+              <li>
+                  <div class="last-year">
+                      <div class="label" title="Last Year's Target">Last Year: <strong>{{summaryData.lastYearTarget ? summaryData.lastYearTarget : 0}}</strong></div>
+                  </div>
+                  <div class="current-year">
+                      <div class="label" title="Current Year Target">Current Year Target: <strong>{{summaryData.target_amount ? summaryData.target_amount : 0}}</strong></div>
+                      <!-- <div class="value">{{summaryData.currentYearTarget}}</div> -->
+                  </div>
+              </li>
+          </ul>
+      </div>
+
+      <div class="summary-data">
+          <ul class="head-row row">
+              <li class="col-12" style="padding-left: 5px;">
+                  <div class="first-row">
+                      <div class="paid"><div><br></div>
+                          <div class="label" title="Committed YTD"><strong> Committed: </strong><strong>{{summaryData.total_amount ? summaryData.total_amount : 0}}</strong></div>
+                          <!-- <div class="value">{{summaryData.committedYTD}}</div> -->
+                      </div>
+                      <div class="remaining pull-right"><div><br></div>
+                          <div class="label" title="Shortage to Make Up"><strong>Shortage:</strong> <strong>{{summaryData.shortage}}</strong></div>
+                          <!-- <div class="value">{{summaryData.shortage}}</div> -->
+                      </div>
+                  </div>
+                  <div class="second-row">
+                      <div class="progress">
+                          <div class="progress-bar" role="progressbar" [style.width]="summaryData.percentage" aria-valuenow="100"
+                              aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                  </div>
+              </li>
+          </ul>
+      </div>
+  </div>
+
+
+
     <div class="gfooter clearfix">
       <div class="pagerDom pull-left" *ngIf="listingData.itemBody.length && pager">
         <ul class="pagination justify-content-center">
@@ -68,10 +124,12 @@
             <a class="page-link" href="javascript:void(0);" (click)="nextPage()"><i class="fa fa-chevron-right"></i></a>
           </li>
         </ul>
-        <span *ngIf="recordCounter && listingData.recEndfrom && listingData.totalDocs" class="record-counter">
-          ('Showing' <span>{{((listingData.currentPage - 1) * listingApi.retainNoOfShow) + 1}}</span> - <span>{{listingData.recEndfrom}}</span>of <span>{{listingData.totalDocs}}</span>)</span>
+        <!-- <span *ngIf="recordCounter && listingData.recEndfrom && listingData.totalDocs" class="record-counter">
+          ('Showing' <span>{{((listingData.currentPage - 1) * listingApi.retainNoOfShow) + 1}}</span> - <span>{{listingData.recEndfrom}}</span>of <span>{{listingData.totalDocs}}</span>)</span> -->
       </div>
-  
+
+
+
       <div class="pull-right settings right-align"
         [ngClass]="{'allow-resize': allowResizeWin}" *ngIf="rpp || customizable || allowResizeWin">
         <div *ngIf="rpp" class="dropdown rpp-dd" ngbDropdown>
@@ -88,5 +146,5 @@
         </div>
       </div>
     </div>
+
   </div>
-  

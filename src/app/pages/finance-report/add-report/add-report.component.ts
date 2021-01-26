@@ -52,8 +52,8 @@ export class AddReportComponent implements OnInit, OnDestroy {
     seqno19: null
   };
 
-  public summaryData: any = {};
-  public finYearLedgerData: any = null;
+  @Input() summaryData: any = {};
+  @Input() finYearLedgerData: any = null;
 
 
   private filterParam: any = {

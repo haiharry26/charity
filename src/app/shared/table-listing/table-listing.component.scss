@@ -2,10 +2,10 @@
     display: block;
     height: 100%;
   }
-  
+
   .listingContainer {
     height: 100%;
-  
+
     .listing-header {
       background-color: #f1f1f1;
       position: absolute;
@@ -13,10 +13,10 @@
       width: 100%;
       z-index: 2;
       box-shadow: 0 0 3px 0 #bbb;
-  
+
       .settings {
         padding: 6px 10px 6px 0;
-  
+
         > * {
           margin-left: 5px;
           display: inline-block;
@@ -24,7 +24,7 @@
         }
       }
     }
-  
+
     .table-grid {
       border-bottom: 1px solid #ddd;
       position: relative;
@@ -41,30 +41,30 @@
             position: relative;
             white-space: nowrap;
             overflow: hidden;
-  
+
             b {
               font-weight: bold;
             }
           }
         }
       }
-  
+
       .gbody {
         height: 100%;
         width: 100%;
         overflow: auto;
         border-top: 36px solid #fff;
-  
+
         .pagerDom {
           text-align: left;
           padding: 8px 5px 8px 10px;
           line-height: 1;
-  
+
           .record-counter {
             line-height: 26px;
             margin-left: 10px;
           }
-  
+
           .pagination {
             margin: 0;
             > li {
@@ -75,7 +75,82 @@
           }
         }
       }
-  
+
     }
   }
-  
+  .progress{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #007bff;
+    transition: width .6s ease;
+}
+  .left-content {
+    height: 100%;
+  }
+
+.main-header {
+    height: auto;
+    h1 {
+        float: none;
+    }
+
+    .head-row {
+        list-style: none;
+        padding: 0px;
+        margin: 0px;
+        display: flex;
+        justify-content: space-between;
+        li {
+            .label {
+                font-size: 0.875rem;
+            }
+
+            .value {
+                font-size: 1.25rem;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .first-row {
+        > div {
+            display: inline-block;
+            .label {
+                font-size: 0.875rem;
+                font-weight: normal;
+            }
+
+            .value {
+                font-size: 1rem;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .summary-data {
+        margin-top: 10px;
+    }
+
+    .year-data {
+        padding: 0px 0px 0px 250px;
+        li {
+            > div {
+                float: left;
+                margin-right: 15px;
+            }
+        }
+    }
+}
+
+.main-section {
+    border-top: 100px solid transparent;
+}
+
+.list-wrap .view-holder {
+    border-bottom: none;
+}

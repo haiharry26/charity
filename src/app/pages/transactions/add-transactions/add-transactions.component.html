@@ -214,35 +214,36 @@
                         </select>
                         <span class="form-field-label-wrapper" (click)="setFocus($event, 'clientId');">
                             <label class="form-field-label">
-                                <span>Receipt</span>
-                            </label>
-                        </span>
-
-                    </div>
-
-                    <div class="form-field col-3">
-                        <input type="text" id="receipt_quicken" name="receipt_quicken" maxlength="3" class="input-element"
-                            (input)="validate();"
-                            [ngClass]="{'hasValue': inputElem.receipt_quicken.value, 'hasFocus': inputElem.receipt_quicken.value}"
-                            [(ngModel)]="inputElem.receipt_quicken.value" />
-                        <span class="form-field-label-wrapper" (click)="setFocus($event, 'receipt_quicken');">
-                            <label class="form-field-label">
-                                <span>Receipt Quicken</span>
+                                <span>Receipt Received?</span>
                             </label>
                         </span>
                     </div>
 
                     <div class="form-field col-3">
-                        <input type="text" id="direction_of" name="direction_of" maxlength="3" class="input-element"
-                            (input)="validate();"
-                            [ngClass]="{'hasValue': inputElem.direction_of.value, 'hasFocus': inputElem.direction_of.value}"
-                            [(ngModel)]="inputElem.direction_of.value" />
-                        <span class="form-field-label-wrapper" (click)="setFocus($event, 'direction_of');">
-                            <label class="form-field-label">
-                                <span>Direction of</span>
-                            </label>
-                        </span>
-                    </div>
+                      <select [(ngModel)]="inputElem.receipt_quicken" class="input-element"
+                          [ngClass]="{'hasValue': inputElem.receipt_quicken, 'hasFocus': inputElem.receipt_quicken}">
+                          <option value="Y">Y</option>
+                          <option value="N">N</option>
+                      </select>
+                      <span class="form-field-label-wrapper" (click)="setFocus($event, 'clientId');">
+                          <label class="form-field-label">
+                              <span>Receipt Quicken?</span>
+                          </label>
+                      </span>
+                  </div>
+
+                    <div class="form-field col-3">
+                      <select [(ngModel)]="inputElem.direction_of.value" class="input-element"
+                          [ngClass]="{'hasValue': inputElem.direction_of.value, 'hasFocus': inputElem.direction_of.value}">
+                          <option value="Y">Y</option>
+                          <option value="N">N</option>
+                      </select>
+                      <span class="form-field-label-wrapper" (click)="setFocus($event, 'clientId');">
+                          <label class="form-field-label">
+                              <span>Direction of</span>
+                          </label>
+                      </span>
+                  </div>
                 </div>
 
                 <div class="form-group">
@@ -257,7 +258,7 @@
 
                     <div class="form-field col-3">
                         <mat-form-field appearance="fill">
-                            <mat-label>Transmite Date</mat-label>
+                            <mat-label>Transmittle send date</mat-label>
                             <input matInput [(ngModel)]="inputElem.transmite_date" [matDatepicker]="picker1">
                             <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
                             <mat-datepicker #picker1></mat-datepicker>
@@ -296,28 +297,31 @@
                         </span>
                     </div>
 
-                    <div class="form-field col-3">
-                        <input type="text" id="courties_copies" name="courties_copies" maxlength="100" class="input-element"
-                            (input)="validate();"
-                            [ngClass]="{'hasValue': inputElem.courties_copies.value, 'hasFocus': inputElem.courties_copies.value}"
-                            [(ngModel)]="inputElem.courties_copies.value" />
-                        <span class="form-field-label-wrapper" (click)="setFocus($event, 'courties_copies');">
-                            <label class="form-field-label">
-                                <span>Courties Copies</span>
-                            </label>
-                        </span>
-                    </div>
+                     <div class="form-field col-3">
+                      <select [(ngModel)]="inputElem.courties_copies.value" class="input-element"
+                          [ngClass]="{'hasValue': inputElem.courties_copies.value, 'hasFocus': inputElem.courties_copies.value}">
+                          <option value="Y">Y</option>
+                          <option value="N">N</option>
+                      </select>
+                      <span class="form-field-label-wrapper" (click)="setFocus($event, 'clientId');">
+                          <label class="form-field-label">
+                              <span>Send Courtesy Copies?</span>
+                          </label>
+                      </span>
+                  </div>
 
-                    <div class="form-field col-3">
-                        <input type="text" id="email_sent" name="email_sent" maxlength="3" class="input-element" (input)="validate();"
-                            [ngClass]="{'hasValue': inputElem.email_sent.value, 'hasFocus': inputElem.email_sent.value}"
-                            [(ngModel)]="inputElem.email_sent.value" />
-                        <span class="form-field-label-wrapper" (click)="setFocus($event, 'email_sent');">
-                            <label class="form-field-label">
-                                <span>Email Sent</span>
-                            </label>
-                        </span>
-                    </div>
+                  <div class="form-field col-3">
+                    <select [(ngModel)]="inputElem.email_sent.value" class="input-element"
+                        [ngClass]="{'hasValue': inputElem.email_sent.value, 'hasFocus': inputElem.email_sent.value}">
+                        <option value="Y">Y</option>
+                        <option value="N">N</option>
+                    </select>
+                    <span class="form-field-label-wrapper" (click)="setFocus($event, 'clientId');">
+                        <label class="form-field-label">
+                            <span>Email Sent?</span>
+                        </label>
+                    </span>
+                </div>
                 </div>
 
                 <div class="form-group clearfix">

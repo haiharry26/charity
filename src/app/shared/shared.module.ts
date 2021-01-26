@@ -7,7 +7,7 @@ import { SimpleNotificationsModule } from 'angular2-notifications';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BsDatepickerModule, BsLocaleService } from 'ngx-bootstrap/datepicker';
 // import { OwlDateTimeModule, OwlMomentDateTimeModule, OWL_DATE_TIME_FORMATS } from '@danielmoncada/angular-datetime-picker';
-
+import { finYear } from "../pages/data/finYear";
 import { MaterialModule } from '../material/material.module';
 
 import { AccordionComponent } from './accordion/accordion.component';
@@ -39,7 +39,8 @@ export const MY_MOMENT_FORMATS = {
     CustomDateFilterComponent,
     CustomSelectDdComponent,
     FilterWrapperComponent,
-    RepeatorElementsComponent
+    RepeatorElementsComponent,
+
   ],
   imports: [
     CommonModule,
@@ -49,7 +50,7 @@ export const MY_MOMENT_FORMATS = {
     SimpleNotificationsModule,
     HttpClientModule,
     BsDatepickerModule.forRoot(),
-    MaterialModule
+    MaterialModule,
   ],
   exports: [
     AccordionComponent,
@@ -58,7 +59,8 @@ export const MY_MOMENT_FORMATS = {
     CustomDateFilterComponent,
     CustomSelectDdComponent,
     FilterWrapperComponent,
-    RepeatorElementsComponent
+    RepeatorElementsComponent,
+
   ]
 })
 export class SharedModule { }

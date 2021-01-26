@@ -3,8 +3,11 @@
     height: 100%;
     position: relative;
   }
-  
+
   .left-content {
     height: 100%;
   }
-  
+  .list-wrap .view-holder {
+    height: 106%;
+    border-bottom: 42px solid #fff;
+  }

@@ -80,13 +80,13 @@
                     </div>
 
                     <div class="form-field col-3">
-                        <input type="text" id="city" name="city" class="input-element"
+                        <input type="text" id="state" name="state" class="input-element"
                             (input)="validate();"
-                            [ngClass]="{'hasValue': inputElem.city.value, 'hasFocus': inputElem.city.value}"
-                            [(ngModel)]="inputElem.city.value" />
-                        <span class="form-field-label-wrapper" (click)="setFocus($event, 'city');">
+                            [ngClass]="{'hasValue': inputElem.state.value, 'hasFocus': inputElem.state.value}"
+                            [(ngModel)]="inputElem.state.value" />
+                        <span class="form-field-label-wrapper" (click)="setFocus($event, 'state');">
                             <label class="form-field-label">
-                                <span>City</span>
+                                <span>state</span>
                             </label>
                         </span>
                     </div>

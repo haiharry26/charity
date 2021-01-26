@@ -64,7 +64,7 @@ export class AddMasterComponent implements OnInit, OnDestroy {
       isFocus: false,
       isLoading: false
     },
-    city: {
+    state: {
       value: '',
       isFocus: false,
       isLoading: false
