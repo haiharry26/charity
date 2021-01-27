@@ -685,6 +685,7 @@ export class TableListingComponent implements OnInit, OnDestroy {
     this.timestamp = (new Date()).getTime();
     this.init();
     this.init1();
+    this.setSummaryData();
   }
 
   ngOnDestroy() {
@@ -2510,6 +2511,7 @@ export class TableListingComponent implements OnInit, OnDestroy {
       return;
     }
     this.setColumnFilterData();
+    this.onFilterChange1(data);
   }
 
   /**
@@ -2698,7 +2700,7 @@ export class TableListingComponent implements OnInit, OnDestroy {
 
 
   init1() {
-    this.setSummaryData();
+
   }
 
   onFilterChange1(evt) {

@@ -64,11 +64,11 @@ export class AddMasterComponent implements OnInit, OnDestroy {
       isFocus: false,
       isLoading: false
     },
-    /*city: {
+    city: {
       value: '',
       isFocus: false,
       isLoading: false
-    },*/
+    },
     state: {
       value: '',
       isFocus: false,

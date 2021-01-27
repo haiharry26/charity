@@ -3,7 +3,7 @@
       <div class="filter-row settings">
         <app-filter-wrapper class="filter-container fit-to-parent"
           [defaultFilterList]="defaultFilterList" [listingType]="1"
-          (onSelectionChange)="onFilterChange($event)" (onFilterChange)="onFilterChange($event)">
+          (onSelectionChange)="onFilterChange($event)"  (onFilterChange)="onFilterChange($event)">
         </app-filter-wrapper>
       </div>
     </div>
@@ -17,6 +17,7 @@
               <input *ngIf="listingData.itemHeader[0].colType === 'checkbox'"
                 type="checkbox" [(ngModel)]="listingData.checkAll" (change)="checkall()" />
           </li>
+          <a></a>
           <ng-container *ngFor="let itemH of listingData.itemHeader;trackBy: headerTrackBy;let $index = index;">
             <li *ngIf="!($index == 0 && itemH.colType == 'checkbox')" [attr.uindex]="$index"
               [style.display]="!($index == 0 && itemH.colType == 'checkbox') ? 'inline-block' : 'none'"
@@ -57,44 +58,34 @@
       </div>
     </div>
 
-
-
-
-
     <div class="main-header fin-report" [ngClass]="{'aLoader': isLoading}">
       <!-- <h1>Finance Report</h1> -->
       <div class="listingContainer">
           <div class="listing-header clearfix">
               <div class="filter-row settings">
-                  <app-filter-wrapper class="filter-container fit-to-parent" [defaultFilterList]="defaultFilterList"
-                      (onSelectionChange)="onFilterChange($event)" (onFilterChange)="onFilterChange($event)">
+                  <app-filter-wrapper class="filter-container fit-to-parent" [defaultFilterList]="defaultFilterList1"
+                      (onSelectionChange)="onFilterChange1($event)" (onFilterChange1)="onFilterChange1($event)">
                   </app-filter-wrapper>
               </div>
           </div>
-
-          <!-- <ul class="head-row row year-data">
-              <li>
-                  <div class="last-year">
-                      <div class="label" title="Last Year's Target">Last Year: <strong>{{summaryData.lastYearTarget ? summaryData.lastYearTarget : 0}}</strong></div>
-                  </div>
-                  <div class="current-year">
-                      <div class="label" title="Current Year Target">Current Year Target: <strong>{{summaryData.target_amount ? summaryData.target_amount : 0}}</strong></div>
-                      <!-- <div class="value">{{summaryData.currentYearTarget}}</div> -->
-               <!--   </div>
-              </li>
-          </ul> -->
+          <div><br></div>
       </div>
 
       <div class="summary-data">
           <ul class="head-row row">
-              <li class="col-12" style="padding-left: 5px;">
+              <li class="col-12" style="padding-left: 0px;">
                   <div class="first-row">
                       <div class="paid"><div><br></div>
-                          <div class="label" title="Committed YTD"><strong> Committed: </strong><strong>{{summaryData.total_amount ? summaryData.total_amount : 0}}</strong></div>
+                          <div class="label" title="Committed YTD"><strong> Committed: </strong><strong>{{summaryData.total_amount ? summaryData.total_amount : 0}}</strong>
                           <!-- <div class="value">{{summaryData.committedYTD}}</div> -->
+                          <strong style="padding-left: 190px;">Last Year:</strong> <strong>{{summaryData.lastYearTarget ? summaryData.lastYearTarget : 0}}</strong>
+                          <strong style="padding-left: 190px;">Current Year Target:</strong> <strong>{{summaryData.target_amount ? summaryData.target_amount : 0}}</strong>
+                        </div>
                       </div>
                       <div class="remaining pull-right"><div><br></div>
-                          <div class="label" title="Shortage to Make Up"><strong>Shortage:</strong> <strong>{{summaryData.shortage}}</strong></div>
+                          <div class="label" title="Shortage to Make Up">
+                            <strong>Shortage:</strong> <strong>{{summaryData.shortage}}</strong></div>
+
                           <!-- <div class="value">{{summaryData.shortage}}</div> -->
                       </div>
                   </div>
