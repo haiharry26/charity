@@ -1,7 +1,7 @@
-export const CHARITY_MASTER_COLUMN_HEADER = {
+export const CHARITY_TRANSACTIONS_COLUMN_HEADER = {
   checkbox: {
     id: '0',
-    fieldName: 'charityid',
+    fieldName: 'srno',
     colDisplayName: '',
     colType: 'checkbox',
     userIndex: 0,
@@ -15,12 +15,12 @@ export const CHARITY_MASTER_COLUMN_HEADER = {
     isSortSupported: false,
     isCustomAttributeColumn: false
   },
-  charityname: {
+  srno: {
     userIndex: 1,
-    fieldName: 'charityname',
-    colDisplayName: 'Charity Name',
-    title: 'Charity Name',
-    widthOfColumn: 150,
+    fieldName: 'srno',
+    colDisplayName: 'Trans Id',
+    title: 'Transaction Id',
+    widthOfColumn: 75,
     colType: 'text',
     dataType: 'text',
     id: '1',
@@ -32,11 +32,11 @@ export const CHARITY_MASTER_COLUMN_HEADER = {
     isSortSupported: false,
     isCustomAttributeColumn: false
   },
-  ein: {
+  charityname: {
     userIndex: 2,
-    fieldName: 'ein',
-    colDisplayName: 'EIN',
-    title: 'EIN',
+    fieldName: 'charityname',
+    colDisplayName: 'Charity Name',
+    title: 'Charity Name',
     widthOfColumn: 150,
     colType: 'text',
     dataType: 'text',
@@ -49,12 +49,12 @@ export const CHARITY_MASTER_COLUMN_HEADER = {
     isSortSupported: false,
     isCustomAttributeColumn: false
   },
-  contactname: {
+  orgid: {
     userIndex: 3,
-    fieldName: 'contactname',
-    colDisplayName: 'Contact Name',
-    title: 'Contact Name',
-    widthOfColumn: 150,
+    fieldName: 'orgid',
+    colDisplayName: 'Org Id',
+    title: 'Org Id',
+    widthOfColumn: 100,
     colType: 'text',
     dataType: 'text',
     id: '3',
@@ -66,12 +66,12 @@ export const CHARITY_MASTER_COLUMN_HEADER = {
     isSortSupported: false,
     isCustomAttributeColumn: false
   },
-  dearwhom: {
+  finyearid: {
     userIndex: 4,
-    fieldName: 'dearwhom',
-    colDisplayName: 'Dear Whom',
-    title: 'Dear Whom',
-    widthOfColumn: 150,
+    fieldName: 'finyearid',
+    colDisplayName: 'Fin Year',
+    title: 'Financial Year',
+    widthOfColumn: 100,
     colType: 'text',
     dataType: 'text',
     id: '4',
@@ -83,11 +83,11 @@ export const CHARITY_MASTER_COLUMN_HEADER = {
     isSortSupported: false,
     isCustomAttributeColumn: false
   },
-  address1: {
+  suggested_amount: {
     userIndex: 5,
-    fieldName: 'address1',
-    colDisplayName: 'Address 1',
-    title: 'Address 1',
+    fieldName: 'suggested_amount',
+    colDisplayName: 'Suggested Amt',
+    title: 'Suggested Amount',
     widthOfColumn: 150,
     colType: 'text',
     dataType: 'text',
@@ -100,11 +100,11 @@ export const CHARITY_MASTER_COLUMN_HEADER = {
     isSortSupported: false,
     isCustomAttributeColumn: false
   },
-  address2: {
+  amount: {
     userIndex: 6,
-    fieldName: 'address2',
-    colDisplayName: 'Address 2',
-    title: 'Address 2',
+    fieldName: 'amount',
+    colDisplayName: 'Amount',
+    title: 'Amount',
     widthOfColumn: 150,
     colType: 'text',
     dataType: 'text',
@@ -117,12 +117,12 @@ export const CHARITY_MASTER_COLUMN_HEADER = {
     isSortSupported: false,
     isCustomAttributeColumn: false
   },
-  city: {
+  amount_in_words: {
     userIndex: 7,
-    fieldName: 'city',
-    colDisplayName: 'City',
-    title: 'City',
-    widthOfColumn: 150,
+    fieldName: 'amount_in_words',
+    colDisplayName: 'Amt in words',
+    title: 'Amount in Words',
+    widthOfColumn: 200,
     colType: 'text',
     dataType: 'text',
     id: '7',
@@ -134,12 +134,12 @@ export const CHARITY_MASTER_COLUMN_HEADER = {
     isSortSupported: false,
     isCustomAttributeColumn: false
   },
-  state: {
+  modeofpay: {
     userIndex: 8,
-    fieldName: 'state',
-    colDisplayName: 'state',
-    title: 'state',
-    widthOfColumn: 150,
+    fieldName: 'modeofpay',
+    colDisplayName: 'Mod of Pay',
+    title: 'Mode of Pay',
+    widthOfColumn: 100,
     colType: 'text',
     dataType: 'text',
     id: '8',
@@ -151,14 +151,12 @@ export const CHARITY_MASTER_COLUMN_HEADER = {
     isSortSupported: false,
     isCustomAttributeColumn: false
   },
-
-
-  postalcode: {
+  paidvia_cc: {
     userIndex: 9,
-    fieldName: 'postalcode',
-    colDisplayName: 'Postal Code',
-    title: 'Postal Code',
-    widthOfColumn: 150,
+    fieldName: 'paidvia_cc',
+    colDisplayName: 'Paid Via CC',
+    title: 'Paid Via CC',
+    widthOfColumn: 100,
     colType: 'text',
     dataType: 'text',
     id: '9',
@@ -170,12 +168,12 @@ export const CHARITY_MASTER_COLUMN_HEADER = {
     isSortSupported: false,
     isCustomAttributeColumn: false
   },
-  emailid1: {
+  paid_from: {
     userIndex: 10,
-    fieldName: 'emailid1',
-    colDisplayName: 'Email ID 1',
-    title: 'Email ID 1',
-    widthOfColumn: 150,
+    fieldName: 'paid_from',
+    colDisplayName: 'Paid From',
+    title: 'Paid From',
+    widthOfColumn: 100,
     colType: 'text',
     dataType: 'text',
     id: '10',
@@ -187,12 +185,12 @@ export const CHARITY_MASTER_COLUMN_HEADER = {
     isSortSupported: false,
     isCustomAttributeColumn: false
   },
-  emailid2: {
+  irs_ok: {
     userIndex: 11,
-    fieldName: 'emailid2',
-    colDisplayName: 'Email ID 2',
-    title: 'Email ID 2',
-    widthOfColumn: 150,
+    fieldName: 'irs_ok',
+    colDisplayName: 'IRS OK',
+    title: 'IRS OK',
+    widthOfColumn: 100,
     colType: 'text',
     dataType: 'text',
     id: '11',
@@ -204,12 +202,12 @@ export const CHARITY_MASTER_COLUMN_HEADER = {
     isSortSupported: false,
     isCustomAttributeColumn: false
   },
-  phone1: {
+  receipt: {
     userIndex: 12,
-    fieldName: 'phone1',
-    colDisplayName: 'Phone No 1',
-    title: 'Phone No 1',
-    widthOfColumn: 150,
+    fieldName: 'receipt',
+    colDisplayName: 'Receipt',
+    title: 'Receipt',
+    widthOfColumn: 100,
     colType: 'text',
     dataType: 'text',
     id: '12',
@@ -221,12 +219,12 @@ export const CHARITY_MASTER_COLUMN_HEADER = {
     isSortSupported: false,
     isCustomAttributeColumn: false
   },
-  phone2: {
+  receipt_quicken: {
     userIndex: 13,
-    fieldName: 'phone2',
-    colDisplayName: 'Phone No 2',
-    title: 'Phone No 2',
-    widthOfColumn: 150,
+    fieldName: 'receipt_quicken',
+    colDisplayName: 'Receipt Quicken',
+    title: 'Receipt Quicken',
+    widthOfColumn: 100,
     colType: 'text',
     dataType: 'text',
     id: '13',
@@ -238,12 +236,12 @@ export const CHARITY_MASTER_COLUMN_HEADER = {
     isSortSupported: false,
     isCustomAttributeColumn: false
   },
-  url: {
+  direction_of: {
     userIndex: 14,
-    fieldName: 'url',
-    colDisplayName: 'URL',
-    title: 'URL',
-    widthOfColumn: 150,
+    fieldName: 'direction_of',
+    colDisplayName: 'Direction Of',
+    title: 'Direction Of',
+    widthOfColumn: 100,
     colType: 'text',
     dataType: 'text',
     id: '14',
@@ -255,12 +253,12 @@ export const CHARITY_MASTER_COLUMN_HEADER = {
     isSortSupported: false,
     isCustomAttributeColumn: false
   },
-  active: {
+  wording_direction: {
     userIndex: 15,
-    fieldName: 'active',
-    colDisplayName: 'Active',
-    title: 'Active',
-    widthOfColumn: 150,
+    fieldName: 'wording_direction',
+    colDisplayName: 'Wording Direction',
+    title: 'Wording Direction',
+    widthOfColumn: 100,
     colType: 'text',
     dataType: 'text',
     id: '15',
@@ -272,12 +270,12 @@ export const CHARITY_MASTER_COLUMN_HEADER = {
     isSortSupported: false,
     isCustomAttributeColumn: false
   },
-  remarks: {
+  courties_copies: {
     userIndex: 16,
-    fieldName: 'remarks',
-    colDisplayName: 'Remarks',
-    title: 'Remarks',
-    widthOfColumn: 150,
+    fieldName: 'courties_copies',
+    colDisplayName: 'Countries Copies',
+    title: 'Countries Copies',
+    widthOfColumn: 100,
     colType: 'text',
     dataType: 'text',
     id: '16',
@@ -289,15 +287,66 @@ export const CHARITY_MASTER_COLUMN_HEADER = {
     isSortSupported: false,
     isCustomAttributeColumn: false
   },
-  createdby: {
+  transmite_date: {
     userIndex: 17,
-    fieldName: 'createdby',
-    colDisplayName: 'Created By',
-    title: 'Created By',
-    widthOfColumn: 150,
+    fieldName: 'transmite_date',
+    colDisplayName: 'Transmite Date',
+    title: 'Transmite Date',
+    widthOfColumn: 100,
     colType: 'text',
     dataType: 'text',
     id: '17',
+    imgName: '',
+    tooltipSrc: '',
+    function: '',
+    funParams: '',
+    wrapData: '',
+    isSortSupported: false,
+    isCustomAttributeColumn: false
+  },
+  createdate: {
+    userIndex: 18,
+    fieldName: 'createdate',
+    colDisplayName: 'Created Date',
+    title: 'Created Date',
+    widthOfColumn: 100,
+    colType: 'text',
+    dataType: 'text',
+    id: '18',
+    imgName: '',
+    tooltipSrc: '',
+    function: '',
+    funParams: '',
+    wrapData: '',
+    isSortSupported: false,
+    isCustomAttributeColumn: false
+  },
+  createdby: {
+    userIndex: 19,
+    fieldName: 'createdby',
+    colDisplayName: 'Created By',
+    title: 'Created By',
+    widthOfColumn: 100,
+    colType: 'text',
+    dataType: 'text',
+    id: '19',
+    imgName: '',
+    tooltipSrc: '',
+    function: '',
+    funParams: '',
+    wrapData: '',
+    isSortSupported: false,
+    isCustomAttributeColumn: false
+  },
+  remarks: {
+    userIndex: 20,
+    fieldName: 'remarks',
+    colDisplayName: 'Created By',
+    title: 'Created By',
+    widthOfColumn: 100,
+    colType: 'text',
+    dataType: 'text',
+    id: '20',
     imgName: '',
     tooltipSrc: '',
     function: '',

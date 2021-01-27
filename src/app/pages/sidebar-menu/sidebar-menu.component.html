@@ -42,6 +42,17 @@
                     </div>
                 </a>
             </li>
+
+            <li routerLinkActive='active' class='list-group-item hover' routerLink="./report">
+              <a class='d-flex'>
+                  <span class='d-inline-block mr-3'><img class="icon-image" src="../assets/Menu Icons/Tasklist.svg"
+            alt="" /></span>
+                  <div [ngClass]="isCollapsed ? 'd-flex w-100 animation' : 'd-none animation'">
+                      <span class="text mr-2">Report</span>
+                      <!-- <span class="align-self-center badge badge-light">25</span> -->
+                  </div>
+              </a>
+          </li>
         </ul>
     </div>
 </div>

@@ -1,0 +1,49 @@
+<div class="main-header">
+    <!-- <div class="pull-right">
+        <app-custom-common-dropdown [isDialog]="true" [isReqToExpanded]=true [isDockable]="true" [isExpandable]="true"
+            [ddName]="'addCharityTransactionsDetails'" [btnText]="'ADD'" [btnTitle]="'Add Charity Transaction Details'"
+            [ddTitle]="'Charity Transaction Details'" [btnId]="'addCharityTransactionsDetails'" [btnIcon]="'fa-plus'"
+            [parentHeight]="parentHeight" [autoClose]="'outsideClick'" [appendTo]="'right-content'">
+            <app-add-transactions (onAddSuccess)="loadListingData($event)"></app-add-transactions>
+        </app-custom-common-dropdown>
+
+        <app-custom-common-dropdown [isDialog]="true" [isReqToExpanded]=true [isDisabled]="!selectedRow" [isDockable]="true"
+            [isExpandable]="true" [ddName]="'editCharityTransactionsDetails'" [btnText]="'EDIT'"
+            [btnTitle]="'Edit Charity Transaction Details'" [ddTitle]="'Charity Transaction Details'" [btnId]="'editCharityTransactionsDetails'"
+            [btnIcon]="'fa-edit'" [parentHeight]="parentHeight" [autoClose]="'outsideClick'"
+            [appendTo]="'right-content'">
+            <app-add-transactions [isForEdit]=true [selectedRow]="selectedRow" (onUpdateSuccess)="loadListingData($event)">
+            </app-add-transactions>
+        </app-custom-common-dropdown>
+
+        <button class="btn btn-default btn-delete" [disabled]="!selectedRow" [ngClass]="{'disabled': !selectedRow}"
+            (click)="delete($event);">
+            <i class="fa fa-trash"></i> Delete
+        </button>
+
+
+        <button (click)="sendEmail()" class="btn btn-primary">Send Email</button>
+        <button (click)="exportAsXLSX()" class="btn btn-success">Export To Excel</button>
+
+    </div> -->
+    <h1>Report of Transaction</h1>
+</div>
+
+<div class="main-section" #mainSection>
+    <div class="right-content" id="right-content"></div>
+    <div class="left-content">
+        <div class="list-wrap">
+            <div class="view-holder">
+                <div class="listing-container" [ngClass]="{'aLoader': isLoading, 'failed': isListServerError}">
+                    <app-table-listing [listData]="activeListing.list" [appType]="appType" [template]="listingTemplate"
+                        [inifiniteScroll]="false" [defaultFilterList]="filterList"
+                        (onRowSelectionChange)="onRowSelectionChanged($event)"
+                        (onSelectionChange)="loadListing($event)">
+                    </app-table-listing>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
