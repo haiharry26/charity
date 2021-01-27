@@ -297,7 +297,7 @@
                         </span>
                     </div>
 
-                     <div class="form-field col-3">
+                      <div class="form-field col-3">
                       <select [(ngModel)]="inputElem.courties_copies.value" class="input-element"
                           [ngClass]="{'hasValue': inputElem.courties_copies.value, 'hasFocus': inputElem.courties_copies.value}">
                           <option value="Y">Y</option>
@@ -309,6 +309,16 @@
                           </label>
                       </span>
                   </div>
+                  <!-- <div class="form-field col-4">
+                    <input type="text" id="courties_copies" name="courties_copies" maxlength="200" class="input-element" (input)="validate();"
+                        [ngClass]="{'hasValue': inputElem.courties_copies.value, 'hasFocus': inputElem.courties_copies.value}"
+                        [(ngModel)]="inputElem.courties_copies.value" />
+                    <span class="form-field-label-wrapper" (click)="setFocus($event, 'courties_copies');">
+                        <label class="form-field-label">
+                            <span>Send Courtesy Copies?</span>
+                        </label>
+                    </span>
+                </div>-->
 
                   <div class="form-field col-3">
                     <select [(ngModel)]="inputElem.email_sent.value" class="input-element"
